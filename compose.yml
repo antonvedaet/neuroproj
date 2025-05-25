@@ -1,0 +1,14 @@
+version: "3.8"
+x-build-args: &build-args
+  BUILDKIT_INLINE_CACHE: 1
+  DOCKER_BUILDKIT: 1
+  COMPOSE_DOCKER_CLI_BUILD: 1
+services:
+  adhd-api:
+    build:
+      context: .
+      args:
+        <<: *build-args
+    command: ["python3", "main.py"]
+    ports:
+      - "5000:5000"
