@@ -27,7 +27,13 @@ class Analyser:
 
         pred_probs = res[0].probs
         if pred_probs is not None:
+            top1_idx = pred_probs.top1
             top1_conf = pred_probs.top1conf
-            return float(top1_conf)
+            class_name = res[0].names[top1_idx]
+
+            return {
+                'class': int(class_name),
+                'confidence': float(top1_conf)
+            }
         else:
             return {'error': 'No predictions'}

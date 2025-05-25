@@ -14,4 +14,4 @@ async def check_service():
 async def analyse(file: UploadFile):
     path = await analyser.recieve_image(file)
     res = await analyser.analyse_image(path)
-    return {"result": str(res)}
+    return res
