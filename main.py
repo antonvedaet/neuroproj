@@ -1,4 +1,3 @@
-import asyncio
 import uvicorn
 from src.app import app
 

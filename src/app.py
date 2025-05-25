@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from src.api.app_routes import app_routes
+
 
 def create_app() -> FastAPI:
     app = FastAPI(
